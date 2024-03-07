@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="logo.css">
+</head>
+<body>
+
+    <header class="contenedor">
+        <h1>Bienvenido a mi Pagina Web!</h1>
+        <nav>
+            
+            <ul>
+                <li><a href="#" onclick="showDiv('div1')">INICIO</a></li>
+                <li><a href="#" onclick="showDiv('div2')">ACERCA DE</a></li>
+                <li><a href="https://open.spotify.com/intl-es/track/2jnOUdpaFKr9koG1Vtbj6v" target="_blank">SPOTIFY</a></li>
+                <li><a href="https://maps.google.com/" target="_blank">GOOGLE MAPS</a></li>
+                <li><a href="#" onclick="showDiv('div3')">VIDEO</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="div1" class="content">
+
+      </div>
+    <div id="div2" class="content">
+        <h3>Acerca de</h3>
+        <p>
+          Mi nombre es Galilea Martinez,La versión que estoy utlizando es la 1.87.
+          Esta página web trata de como crear un menú en HTML y CSS 2024
+
+        </p>
+      </div>
+      <div id="div3" class="content">
+        <video id="miVideo" src="videos/naturaleza.mp4" controls></video>
+      </div>
+      
+
+      <script>
+        function showDiv(divId) {
+          // Ocultar todos los divs
+          var divs = document.getElementsByClassName("content");
+          
+          for (var i = 0; i < divs.length; i++) {
+            divs[i].style.display = "none";
+          }
+          
+          // Mostrar el div seleccionado
+          document.getElementById(divId).style.display = "block";
+          var vid = document.getElementById("miVideo"); 
+          if (document.getElementById(divId).id == 'div3') {
+            vid.currentTime = 0;
+            vid.play();
+          } else {
+            vid.pause();
+          }
+        }
+      </script>
+    
+</body>
+</html>
